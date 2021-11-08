@@ -1,11 +1,19 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net5.0</TargetFramework>
+		<Version>1.0.1</Version>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<Title>Hasher Library</Title>
+		<RepositoryUrl>https://github.com/Ian-Inizias/HasherLibrary</RepositoryUrl>
+		<Copyright>Copyright (c) INIZIAS SOLUTIONS PROVIDER, S.L. 2021</Copyright>
+		<Authors>Ian-Inizias</Authors>
+		<PackageIcon>icon.png</PackageIcon>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="5.0.0" />
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Cryptography.KeyDerivation" Version="5.0.0" />
+		<None Include="images/icon.png" Pack="true" PackagePath="\"/>
+	</ItemGroup>
 
 </Project>
