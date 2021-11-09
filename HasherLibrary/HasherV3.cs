@@ -8,6 +8,10 @@ namespace HasherLibrary
 {
     public static class HasherV3
     {
+        /// <summary>
+        /// Gets a random password and hash pair
+        /// </summary>
+        /// <returns>The first string indicates the password and the second the hash for it</returns>
         public static Dictionary<string, string> GetRandomKeyHashPair()
         {
             string password = Password.GeneratePassword(true, true, true, true, false, 12);
@@ -19,6 +23,14 @@ namespace HasherLibrary
             return KeyHashPair;
         }
 
+        /// <summary>
+        /// Given a password generates the identity hash
+        /// </summary>
+        /// <param name="password">Password to generate the hash with</param>
+        /// <param name="prf">PRF used for key derivation algorithm</param>
+        /// <param name="iterationCount">Iteration count for the derivation algorithm</param>
+        /// <param name="saltSize">Saltsize for the derivation algorith</param>
+        /// <returns></returns>
         public static string GenerateIdentityV3Hash(string password, KeyDerivationPrf prf = KeyDerivationPrf.HMACSHA256, int iterationCount = 10000, int saltSize = 16)
         {
             using (var rng = RandomNumberGenerator.Create())
@@ -45,6 +57,12 @@ namespace HasherLibrary
             return hash;
         }
 
+        /// <summary>
+        /// Verifies that a password corresponds with a certain hash
+        /// </summary>
+        /// <param name="password">Password to check</param>
+        /// <param name="passwordHash">Hash to check</param>
+        /// <returns>Indicates if the password and the hash match</returns>
         public static bool VerifyIdentityV3Hash(string password, string passwordHash)
         {
             var identityV3HashArray = Convert.FromBase64String(passwordHash);

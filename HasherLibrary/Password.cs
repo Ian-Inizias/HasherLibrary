@@ -4,6 +4,16 @@ namespace HasherLibrary
 {
     public static class Password
     {
+        /// <summary>
+        /// Given the choosen parameters generates a valid password
+        /// </summary>
+        /// <param name="includeLowercase">Indicates if it must include lowercase</param>
+        /// <param name="includeUppercase">Indicates if it must include uppercase</param>
+        /// <param name="includeNumeric">Indicates if it must include numeric values</param>
+        /// <param name="includeSpecial">Indicates if it must include special characters</param>
+        /// <param name="includeSpaces">Indicates if it must include spaces</param>
+        /// <param name="lengthOfPassword">Indicates the length of the password</param>
+        /// <returns>Generated password</returns>
         public static string GeneratePassword(bool includeLowercase, bool includeUppercase, bool includeNumeric, bool includeSpecial, bool includeSpaces, int lengthOfPassword)
         {
             const int MAXIMUM_IDENTICAL_CONSECUTIVE_CHARS = 2;
